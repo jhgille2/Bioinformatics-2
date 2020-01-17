@@ -139,7 +139,7 @@ int main ( int argc, char **argv )
   int OptimalScore_start = ScoreArray[seq1.length()][seq2.length()];
   
   // Find the smallest element of the corrected scores. This is the column where the traceback will begin
-  int SmallestIndex;
+  int SmallestIndex = seq2.length();
   int SmallestVal = OptimalScore_start;
   for(unsigned i=0; i<seq2.length(); ++i)
   {
