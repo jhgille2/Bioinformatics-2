@@ -213,7 +213,7 @@ int main ( int argc, char **argv )
 
   // Print the optimal alignment and its score
   std::cout << "-Optimal Alignment-"<< '\n' << Align1 << '\n' << Align2 << '\n';
-  std::cout << "Alignment score: " << SmallestVal;
+  std::cout << "Alignment score: " << SmallestVal << '\n';
 
   return 0;
 }
