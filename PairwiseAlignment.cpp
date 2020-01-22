@@ -2,6 +2,10 @@
    The function takes a FASTA file as it's only argument. The FASTA file should only contain two sequences, otherwise
    the alignment between the last two sequences of the file will be returned. */
 
+/* USAGE: Compile and run on Unix
+   $ g++ -o PairwiseAlign PairwiseAlignment.cpp   
+   $ ./PairwiseAlign [path to FASTA file]*/
+
 
 #include <iostream>
 #include <string>
@@ -139,7 +143,7 @@ int main ( int argc, char **argv )
   int OptimalScore_start = ScoreArray[seq1.length()][seq2.length()];
   
   // Find the smallest element of the corrected scores. This is the column where the traceback will begin
-  int SmallestIndex = seq2.length();
+  int SmallestIndex;
   int SmallestVal = OptimalScore_start;
   for(unsigned i=0; i<seq2.length(); ++i)
   {
@@ -209,7 +213,7 @@ int main ( int argc, char **argv )
 
   // Print the optimal alignment and its score
   std::cout << "-Optimal Alignment-"<< '\n' << Align1 << '\n' << Align2 << '\n';
-  std::cout << "Alignment score: " << SmallestVal << '\n';
+  std::cout << "Alignment score: " << SmallestVal;
 
   return 0;
 }
