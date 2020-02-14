@@ -9,6 +9,10 @@
 #include <math.h> 
 #include <limits> 
 
+/* USAGE: Compile and run on Unix
+   $ g++ -o ForwardAlgorithm ForwardAlgorithm.cpp   
+   $ ./ForwardAlgorithm*/
+
 /* For this algorithm, I will do calculations in log-space to prevent numerical underflow errors in the recursion portion for long sequences.
    The link to a review about these calculations is posted below.
 

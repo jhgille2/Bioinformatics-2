@@ -1,13 +1,17 @@
-/* Implementation of the forward algorithm for calculating the log-likelihood
-   of a given sequence, with provided HMM parameters. The HMM is relatively simple
-   with only two hidden states: AT-rich and GC-rich. Each region emits bases with 
-   different probabilities (AT rich is more likely to emit A or T and vice versa) */
+/* Implementation of the Viterbi algorithm to produce the
+   most likely sequence of states and the associated probability
+   given a HMM model with AT-rich and GC-rich states, each of which
+   may emit A T C or G bases */
 
 #include <iostream>
 #include <string>
 #include <fstream>
 #include <math.h> 
 #include <limits> 
+
+/* USAGE: Compile and run on Unix
+   $ g++ -o ViterbiAlgorithm ViterbiAlgorithm.cpp   
+   $ ./ViterbiAlgorithm*/
 
 /* For this algorithm, I will do calculations in log-space to prevent numerical underflow errors in the recursion portion for long sequences.
    The link to a review about these calculations is posted below.
