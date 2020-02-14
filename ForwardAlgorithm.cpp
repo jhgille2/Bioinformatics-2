@@ -208,11 +208,7 @@ int main ( int argc, char **argv )
    }*/
 
    // Sum last column of the recusion array to calculate the final probability of the sequence
-    double FinalLikelihood = 0;
-    for(unsigned i = 0; i < nStates; ++i)
-    {
-        FinalLikelihood += RecursionArray[i][Seq.length() - 1];
-    }
+    double FinalLikelihood = elnsum(RecursionArray[0][Seq.length() - 1], RecursionArray[1][Seq.length() - 1]);
 
     // Print Transition Matrix
     std::cout << "Transition Matrix" << std::endl;
